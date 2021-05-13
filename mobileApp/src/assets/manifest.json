@@ -1,0 +1,11 @@
+{
+  "name": "Momentum",
+  "short_name": "KMomentum",
+  "description": "A  Momentum App",
+  "start_url": "./",
+  "author": "Anele 'ace' M",
+  "theme_color": "#d0001c",
+  "background_color": "#FFFFFF",
+  "display": "browser"
+
+}

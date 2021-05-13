@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="title">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <form [formGroup]="loginForm" class="log-in-form" (ngSubmit)="doLogInAction(loginForm)" novalidate>
+
+            <ion-list>
+                <ion-item>
+                    <ion-label position="floating">Email</ion-label>
+                    <ion-input autocomplete="off" type="email" name="email" [formControl]="loginForm.controls['email']"></ion-input>
+                </ion-item>
+
+
+                <ion-item>
+                    <ion-label position="floating">Password</ion-label>
+
+                    <ion-input autocomplete="off"
+                               autocorrect="off"
+                               inputmode="text"
+                               spellcheck="false"
+                               [type]="showPassword ? 'text' : 'password' "
+                               name="password" [formControl]="loginForm.controls['password']"></ion-input>
+
+                    <ion-icon color="danger" slot="end" [name]="passwordToggleIcon" (click)="togglePassword()" style="margin: 25px 0 0 0;"></ion-icon>
+                </ion-item>
+
+                <p style="margin: 0;">&nbsp;</p>
+
+                <ion-button size="small" type="submit"  expand="block" shape="round" color="warning">Login In</ion-button>
+				<p>&nbsp;</p>
+                <ion-button size="small" class="btn-facebook" type="button" expand="block" shape="round" color="primary">
+                    Facebook Login  &nbsp;
+                    <!--<ion-icon slot="end" name="logo-facebook"></ion-icon>-->
+                </ion-button>
+
+            </ion-list>
+
+        </form>
+</ion-content>

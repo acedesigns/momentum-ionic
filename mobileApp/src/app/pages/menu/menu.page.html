@@ -1,0 +1,67 @@
+<ion-split-pane contentId="content">
+
+    <ion-menu contentId="content" class="menu-menu">
+
+        <ion-header>
+            <ion-toolbar class="menu_drawer">
+                <img alt="" title="" src="./assets/images/momentum_logo.jpg" />
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content>
+            <ion-list>
+                <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
+                    <ion-item [routerLink]="p.url" routerDirection="root" [class.active-item]="selectedPath.startsWith(p.url)">
+                        <ion-label>
+                            {{ p.title }}
+                        </ion-label>
+                    </ion-item>
+                </ion-menu-toggle>
+
+                <ion-item tappable="tappable" (click)="logUserOut()" routerDirection="root">
+                    Log Out
+                    <ion-icon name="log-out-outline" slot="end"></ion-icon>
+                </ion-item>
+
+            </ion-list>
+        </ion-content>
+
+        <ion-footer>
+            <ion-toolbar>
+
+                <ion-grid class="btn-group">
+                    <ion-row>
+                        <ion-col size="4">
+                            <ion-button color="dark">
+                                <ion-icon size="small" slot="icon-only" name="logo-facebook"></ion-icon>
+                            </ion-button>
+                        </ion-col>
+                        <ion-col size="4">
+                            <ion-button color="dark" >
+                                <ion-icon size="small" slot="icon-only" name="logo-twitter"></ion-icon>
+                            </ion-button>
+                        </ion-col>
+                        <ion-col size="4">
+                            <ion-button color="dark" >
+                                <ion-icon size="small" slot="icon-only" name="logo-instagram"></ion-icon>
+                            </ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+                <ion-grid>
+                    <ion-row>
+                        <ion-col class="footer_copyright">
+                            <p> &copy;  {{ currentYear }} </p>
+                            <p>A PROUDLY SOUTH AFRICAN PRODUCT </p>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+            </ion-toolbar>
+        </ion-footer>
+
+    </ion-menu>
+
+    <ion-router-outlet id="content"></ion-router-outlet>
+</ion-split-pane>

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> WithDraw From Account </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="close" slot="icon-only" (click)="dismiss()" size="large"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <form [formGroup]="withDrawModal" (ngSubmit)="modalSubmit(withDrawModal)" class="form_modal">
+    <ion-row>
+      <ion-col>
+        <ion-text><span class="label"> Amount </span></ion-text>
+        <ion-input class="input" type="text" formControlName="amount"></ion-input>
+      </ion-col>
+    </ion-row>
+
+
+
+
+    <ion-row>
+      <ion-col size="3">
+        <ion-button type="button" (click)="dismiss()" size="small" type="button">
+          Cancel
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <div class="ion-text-end">
+          <ion-button size="small" type="submit" color="medium" [disabled]="withDrawModal.invalid">
+            Withdraw
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </form>
+
+</ion-content>
+
+
+

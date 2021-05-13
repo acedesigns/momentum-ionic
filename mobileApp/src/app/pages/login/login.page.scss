@@ -1,0 +1,12 @@
+ion-header {
+  ion-title.title {
+    font-weight: 500 !important;
+    color: #000;
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+ion-content {
+  .title { text-align: center;}
+}
